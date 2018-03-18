@@ -47,5 +47,7 @@ public class PokemonDao implements IPokemonDao {
 	public List<PokemonVO> searchAll(PokemonVO pokemon) {
 		return mongoTemplate.find(new Query().addCriteria(Criteria.where("name").exists(true)), PokemonVO.class, "pokemon");
 	}
-
+//db.pokemon.find({"specialAttackS.name":"Struggle"}).sort({"specialAttackS.name":-1})
+//sort in format.
+//db.pokemon.find({"specialAttackS.name":"Struggle"})
 }
